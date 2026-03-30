@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storia e Scienza — La Santa Sindone di Torino</title>
+
+  <!-- SEO -->
+  <meta name="description" content="La storia della Sindone di Torino dal 1357 ad oggi, le analisi scientifiche STURP, la datazione al radiocarbonio e il dibattito sull'autenticità.">
+  <link rel="canonical" href="https://shinichizero.github.io/holyshroud/about.html">
+  <link rel="alternate" hreflang="it" href="https://shinichizero.github.io/holyshroud/about.html">
+  <link rel="alternate" hreflang="en" href="https://shinichizero.github.io/holyshroud/about.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Storia e Scienza — La Santa Sindone">
+  <meta property="og:description" content="Duemila anni di mistero, fede e indagine scientifica sulla Sindone di Torino.">
+  <meta property="og:image" content="https://shinichizero.github.io/holyshroud/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://shinichizero.github.io/holyshroud/about.html">
+  <meta property="og:locale" content="it_IT">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://cdn.jsdelivr.net;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: blob: https://upload.wikimedia.org;
+    connect-src 'self';
+    require-trusted-types-for 'script';
+    trusted-types shroud-policy;
+  ">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Referrer-Policy" content="no-referrer">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/animations.css">
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="site-nav" aria-label="Navigazione principale">
+    <a href="./index.html" class="nav-logo" aria-label="Santa Sindone — Home">
+      <svg viewBox="0 0 30 46" aria-hidden="true">
+        <rect x="11" y="0" width="8" height="46" fill="currentColor"/>
+        <rect x="0" y="12" width="30" height="8" fill="currentColor"/>
+      </svg>
+      <span class="nav-logo-text">Santa Sindone</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./about.html" data-i18n="nav.sindone">Sindone</a></li>
+      <li><a href="./viewer.html" data-i18n="nav.image">Immagine</a></li>
+      <li><a href="./image.html" data-i18n="nav.science">Scienza</a></li>
+      <li><a href="./sources.html" data-i18n="nav.sources">Fonti</a></li>
+    </ul>
+    <div class="lang-switcher" aria-label="Seleziona lingua" data-i18n-aria="nav.langLabel">
+      <button class="lang-btn active" data-lang="it" aria-label="Italiano">IT</button>
+      <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      <button class="lang-btn" data-lang="la" aria-label="Latina">LA</button>
+    </div>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══ PAGE HEADER ═══ -->
+  <header class="page-header">
+    <div class="page-header-bg" style="background-image: url('./assets/images/shroud-preview.jpg');"></div>
+    <div class="page-header-content">
+      <h1 data-i18n="about.pageTitle">Storia e Scienza</h1>
+      <p class="hero-subtitle" data-i18n="about.pageSubtitle">Duemila anni di mistero, fede e indagine scientifica</p>
+    </div>
+  </header>
+
+  <main class="page-container">
+
+    <!-- ═══ WHAT IS THE SHROUD ═══ -->
+    <section class="section section-narrow reveal">
+      <h2 data-i18n="about.whatIs.title">Che cos'è la Sindone</h2>
+      <hr>
+      <p data-i18n="about.whatIs.p1">La Sindone di Torino è un telo di lino di 4,42 metri di lunghezza e 1,13 di larghezza, che presenta la doppia immagine, frontale e dorsale, di un uomo che porta i segni di una crocifissione.</p>
+      <p data-i18n="about.whatIs.p2">L'immagine è estremamente superficiale, coinvolgendo solo le fibrille più esterne del tessuto. Non è stata prodotta da pigmenti, pittura, tintura o bruciatura. La formazione dell'immagine rimane, ad oggi, scientificamente inspiegata.</p>
+      <p data-i18n="about.whatIs.p3">Il telo presenta anche macchie di sangue umano di tipo AB, distribuite in corrispondenza delle ferite descritte nei Vangeli: flagellazione, corona di spine, chiodi ai polsi e ai piedi, ferita al costato.</p>
+    </section>
+
+    <!-- ═══ HISTORY TIMELINE ═══ -->
+    <section class="section section-narrow reveal">
+      <h2 data-i18n="about.history.title">La Storia</h2>
+      <hr>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">1357</div>
+          <p class="timeline-text" data-i18n="about.history.t1357">La prima ostensione documentata avviene a Lirey, in Francia, nella collegiata fondata da Geoffroy de Charny.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1453</div>
+          <p class="timeline-text" data-i18n="about.history.t1453">Margherita de Charny cede la Sindone ai Duchi di Savoia, che la custodiscono nella Sainte-Chapelle di Chambéry.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1532</div>
+          <p class="timeline-text" data-i18n="about.history.t1532">Un incendio nella cappella di Chambéry provoca danni e bruciature, successivamente riparate dalle suore Clarisse.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1578</div>
+          <p class="timeline-text" data-i18n="about.history.t1578">La Sindone viene trasferita a Torino da Emanuele Filiberto di Savoia e custodita nella Cattedrale di San Giovanni Battista.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1898</div>
+          <p class="timeline-text" data-i18n="about.history.t1898">L'avvocato Secondo Pia realizza la prima fotografia della Sindone. Il negativo rivela un'immagine di straordinaria chiarezza, scuotendo il mondo.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1978</div>
+          <p class="timeline-text" data-i18n="about.history.t1978">Il progetto STURP (Shroud of Turin Research Project) conduce cinque giorni di analisi scientifiche non distruttive sul telo.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1988</div>
+          <p class="timeline-text" data-i18n="about.history.t1988">L'esame al radiocarbonio, condotto da tre laboratori indipendenti, data il tessuto tra il 1260 e il 1390 d.C. I risultati sono tuttora contestati.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2002</div>
+          <p class="timeline-text" data-i18n="about.history.t2002">La Sindone viene sottoposta a un intervento conservativo: vengono rimosse le toppe del XVI secolo e il telo di supporto (telo d'Olanda).</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2015</div>
+          <p class="timeline-text" data-i18n="about.history.t2015">L'ultima ostensione pubblica attira oltre due milioni di pellegrini a Torino.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SCIENTIFIC ANALYSIS ═══ -->
+    <section class="section section-narrow reveal">
+      <h2 data-i18n="about.science.title">L'Analisi Scientifica</h2>
+      <hr>
+
+      <article>
+        <h3 data-i18n="about.science.sturp.title">STURP (1978)</h3>
+        <p data-i18n="about.science.sturp.text">Il più importante studio scientifico sulla Sindone. Il team concluse che l'immagine non è opera di un artista: non si riscontrano pigmenti, tinture, polveri o altre sostanze applicate. L'immagine è una ossidazione-disidratazione superficiale delle fibrille di lino.</p>
+      </article>
+
+      <article>
+        <h3 data-i18n="about.science.carbon.title">Datazione al Radiocarbonio (1988)</h3>
+        <p data-i18n="about.science.carbon.text">Tre laboratori (Oxford, Zurigo, Tucson) datarono un campione di tessuto tra il 1260 e il 1390. Tuttavia ricerche successive hanno sollevato dubbi sulla rappresentatività del campione, che proveniva da un angolo riparato e potenzialmente contaminato.</p>
+      </article>
+
+      <article>
+        <h3 data-i18n="about.science.pollen.title">Studi sui Pollini</h3>
+        <p data-i18n="about.science.pollen.text">Il criminologo svizzero Max Frei identificò pollini di piante tipiche della Palestina, dell'Anatolia e dell'Europa, suggerendo un percorso geografico coerente con la tradizione.</p>
+      </article>
+
+      <article>
+        <h3 data-i18n="about.science.blood.title">Tracce Ematiche</h3>
+        <p data-i18n="about.science.blood.text">Le macchie sulla Sindone sono sangue umano di tipo AB. La distribuzione anatomica delle ferite è coerente con una crocifissione romana. La presenza di bilirubina elevata suggerisce un soggetto sottoposto a intenso stress fisico.</p>
+      </article>
+
+      <article>
+        <h3 data-i18n="about.science.vp8.title">Informazione Tridimensionale (VP-8)</h3>
+        <p data-i18n="about.science.vp8.text">Nel 1976, l'analizzatore d'immagine VP-8 della NASA rivelò che l'immagine della Sindone contiene informazione tridimensionale codificata nei livelli di luminosità. Nessuna fotografia o dipinto ordinario possiede questa proprietà.</p>
+      </article>
+    </section>
+
+    <!-- ═══ DEBATE ═══ -->
+    <section class="section section-narrow reveal">
+      <h2 data-i18n="about.debate.title">Il Dibattito sull'Autenticità</h2>
+      <hr>
+      <p data-i18n="about.debate.text">La Sindone rimane uno degli oggetti più controversi e studiati al mondo. I sostenitori dell'autenticità indicano l'inspiegabilità scientifica dell'immagine, la coerenza anatomica, i pollini mediorientali e l'informazione 3D. Gli scettici si basano principalmente sulla datazione al carbonio e sull'assenza di documenti storici prima del XIV secolo. La Chiesa Cattolica non si è mai pronunciata ufficialmente sull'autenticità, definendola un'«icona della Passione» e lasciando alla scienza il compito dell'indagine.</p>
+    </section>
+
+    <!-- ═══ CUSTODY ═══ -->
+    <section class="section section-narrow reveal">
+      <h2 data-i18n="about.custody.title">La Custodia a Torino</h2>
+      <hr>
+      <p data-i18n="about.custody.text">La Sindone è custodita nella Cattedrale di San Giovanni Battista a Torino, in una teca speciale a temperatura e atmosfera controllata. La Cappella della Sindone, capolavoro barocco di Guarino Guarini (restaurata dopo l'incendio del 1997), si trova adiacente alla cattedrale. Dal 1983 la Sindone è proprietà della Santa Sede, per volontà testamentaria di Umberto II di Savoia, ma resta affidata alla custodia dell'Arcivescovo di Torino.</p>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-disclaimer">
+        <p data-i18n="footer.disclaimer">Questo sito non è affiliato con l'Arcidiocesi di Torino né con la Santa Sede. È un progetto indipendente, non commerciale, realizzato per fini divulgativi e devozionali.</p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.officialLinks">Collegamenti ufficiali</h4>
+        <ul>
+          <li><a href="https://www.diocesi.torino.it" target="_blank" rel="noopener noreferrer" data-i18n="footer.archdiocese">Arcidiocesi di Torino</a></li>
+          <li><a href="https://www.vatican.va" target="_blank" rel="noopener noreferrer" data-i18n="footer.vatican">Santa Sede</a></li>
+          <li><a href="https://www.sindone.org" target="_blank" rel="noopener noreferrer" data-i18n="footer.sindone">Sindone.org</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.imageCredits">Crediti immagini</h4>
+        <ul>
+          <li><a href="./sources.html">Wikimedia Commons</a></li>
+          <li><a href="./sources.html">Haltadefinizione</a></li>
+          <li><a href="./sources.html">STERA Inc.</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p><span data-i18n="footer.madeWith">Sito realizzato con ❤️ a Torino</span> · <span data-i18n="footer.copyright">Contenuto disponibile per uso non commerciale ed educativo.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/trustedTypes.js"></script>
+  <script src="./js/i18n.js" defer></script>
+  <script src="./js/main.js" defer></script>
+</body>
+</html>

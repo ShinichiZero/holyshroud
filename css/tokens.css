@@ -1,0 +1,54 @@
+/* ═══════════════════════════════════════════════════════════
+   DESIGN TOKENS — Santa Sindone
+   All CSS custom properties for the Holy Shroud website.
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── COLOR PALETTE — Dark Cathedral ── */
+  --color-void:        #0a0807;
+  --color-shadow:      #110e0c;
+  --color-stone:       #1e1a17;
+  --color-ash:         #3d3530;
+  --color-linen:       #b8a99a;
+  --color-ivory:       #e8ddd0;
+  --color-gold:        #c9a84c;
+  --color-gold-muted:  #8a6f35;
+  --color-gold-glow:   rgba(201,168,76,0.15);
+  --color-sepia:       #7a5c3e;
+
+  /* ── TYPOGRAPHY ── */
+  --font-display:  'Cormorant Garamond', 'Georgia', serif;
+  --font-body:     'EB Garamond', 'Palatino', serif;
+  --font-ui:       'Inter', system-ui, sans-serif;
+  --font-size-base: 18px;
+  --line-height-body: 1.75;
+
+  /* ── SPACING SCALE ── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ── LAYOUT ── */
+  --max-width-text:   72ch;
+  --max-width-wide:   1200px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+
+  /* ── TRANSITIONS ── */
+  --ease-sacred:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --duration-slow:  800ms;
+  --duration-med:   400ms;
+  --duration-fast:  200ms;
+
+  /* ── SHADOWS & GLOWS ── */
+  --shadow-gold:  0 0 40px rgba(201,168,76,0.08);
+  --shadow-deep:  0 8px 40px rgba(0,0,0,0.6);
+  --glow-gold:    0 0 80px rgba(201,168,76,0.12);
+}

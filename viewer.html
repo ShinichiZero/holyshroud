@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vista Gigapixel — La Santa Sindone di Torino</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Esplora la Sindone di Torino ad altissima risoluzione con il visore gigapixel interattivo.">
+  <link rel="canonical" href="https://shinichizero.github.io/holyshroud/viewer.html">
+  <link rel="alternate" hreflang="it" href="https://shinichizero.github.io/holyshroud/viewer.html">
+  <link rel="alternate" hreflang="en" href="https://shinichizero.github.io/holyshroud/viewer.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vista Gigapixel — La Santa Sindone">
+  <meta property="og:description" content="Naviga nella Sindone ad altissima risoluzione.">
+  <meta property="og:image" content="https://shinichizero.github.io/holyshroud/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://shinichizero.github.io/holyshroud/viewer.html">
+  <meta property="og:locale" content="it_IT">
+
+  <!-- Optional custom Deep Zoom endpoint -->
+  <meta name="shroud-tile-url" content="">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://cdn.jsdelivr.net;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: blob: https://upload.wikimedia.org https://*.r2.dev https://www.sindone.org https://cdn.jsdelivr.net;
+    connect-src 'self' https://*.r2.dev https://www.sindone.org https://upload.wikimedia.org https://cdn.jsdelivr.net;
+    require-trusted-types-for 'script';
+    trusted-types shroud-policy;
+  ">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Referrer-Policy" content="no-referrer">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/viewer.css">
+  <link rel="stylesheet" href="./css/animations.css">
+</head>
+<body class="viewer-page">
+
+  <!-- ═══ MINIMAL VIEWER NAV ═══ -->
+  <nav class="viewer-nav" aria-label="Navigazione visore">
+    <a href="./index.html" class="nav-logo" aria-label="Santa Sindone — Home">
+      <svg viewBox="0 0 30 46" aria-hidden="true">
+        <rect x="11" y="0" width="8" height="46" fill="currentColor"/>
+        <rect x="0" y="12" width="30" height="8" fill="currentColor"/>
+      </svg>
+      <span class="nav-logo-text">Santa Sindone</span>
+    </a>
+
+    <span class="viewer-title" data-i18n="viewer.title">Vista Gigapixel</span>
+
+    <div class="lang-switcher" aria-label="Seleziona lingua" data-i18n-aria="nav.langLabel">
+      <button class="lang-btn active" data-lang="it" aria-label="Italiano">IT</button>
+      <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      <button class="lang-btn" data-lang="la" aria-label="Latina">LA</button>
+    </div>
+  </nav>
+
+  <!-- ═══ OPENSEADRAGON CONTAINER ═══ -->
+  <main>
+    <div id="osd-viewer" class="viewer-container" role="img" aria-label="Sindone di Torino — visore ad alta risoluzione"></div>
+  </main>
+
+  <!-- ═══ FLOATING INFO PANEL ═══ -->
+  <aside class="info-panel" id="info-panel" aria-label="Informazioni immagine">
+    <button class="info-panel-close" id="info-panel-close" aria-label="Chiudi" data-i18n-aria="viewer.dismiss">✕</button>
+    <h3 data-i18n="viewer.infoTitle">La Santa Sindone</h3>
+    <p id="viewer-info-source">Fonte: Arcidiocesi di Torino, lettura ufficiale del Telo</p>
+    <p id="viewer-info-res">Risoluzione: scansione ufficiale ad alta definizione (8000 x 2333 px)</p>
+  </aside>
+
+  <!-- ═══ CONTROLS HINT ═══ -->
+  <div class="controls-hint" id="controls-hint" aria-hidden="true">
+    <span data-i18n="viewer.controlsHint">Scorri per zoomare · Trascina per esplorare</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/trustedTypes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/openseadragon@4.1.0/build/openseadragon/openseadragon.min.js" defer></script>
+  <script src="./js/i18n.js" defer></script>
+  <script src="./js/viewer.js" defer></script>
+</body>
+</html>

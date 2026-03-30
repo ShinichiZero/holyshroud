@@ -1,0 +1,223 @@
+{
+  "nav": {
+    "home": "Home",
+    "sindone": "Sindone",
+    "image": "Immagine",
+    "viewer": "Vista Gigapixel",
+    "science": "Scienza",
+    "sources": "Fonti",
+    "langLabel": "Seleziona lingua"
+  },
+  "hero": {
+    "supra": "Sindon Domini",
+    "title": "La Santa Sindone",
+    "subtitle": "Il Telo funebre di Gesù Cristo · Torino",
+    "scrollHint": "Scorri per scoprire"
+  },
+  "intro": {
+    "heading": "Un Mistero che perdura nei secoli",
+    "text": "La Sindone di Torino è un antico telo di lino che porta l'immagine di un uomo che sembra essere stato crocifisso. Custodita nella Cattedrale di San Giovanni Battista a Torino, è forse la reliquia più studiata e controversa della storia cristiana. Questo sito è un omaggio reverente alla sua storia, alla scienza che la circonda e al mistero che continua a suscitare.",
+    "quote": "Ecce homo.",
+    "quoteCite": "Giovanni 19,5"
+  },
+  "cards": {
+    "explore": {
+      "title": "Esplora l'Immagine",
+      "text": "Naviga nella Sindone ad altissima risoluzione con il visore gigapixel interattivo.",
+      "action": "Apri il visore →"
+    },
+    "science": {
+      "title": "La Scienza",
+      "text": "Analisi STURP, datazione al carbonio, studi sui pollini e sulle tracce ematiche.",
+      "action": "Approfondisci →"
+    },
+    "images": {
+      "title": "Le Immagini",
+      "text": "Confronta il negativo fotografico, le immagini UV e il rilievo tridimensionale VP-8.",
+      "action": "Confronta →"
+    }
+  },
+  "quote": {
+    "text": "La Sindone è una sfida all'intelligenza. Essa richiede innanzitutto l'impegno di ogni uomo, in particolare del ricercatore, a cogliere con umiltà il messaggio profondo inviato alla sua ragione e alla sua vita.",
+    "cite": "San Giovanni Paolo II — Torino, 24 maggio 1998"
+  },
+  "footer": {
+    "disclaimer": "Questo sito non è affiliato con l'Arcidiocesi di Torino né con la Santa Sede. È un progetto indipendente, non commerciale, realizzato per fini divulgativi e devozionali.",
+    "officialLinks": "Collegamenti ufficiali",
+    "archdiocese": "Arcidiocesi di Torino",
+    "vatican": "Santa Sede",
+    "sindone": "Sindone.org",
+    "imageCredits": "Crediti immagini",
+    "madeWith": "Sito realizzato con ❤️ a Torino",
+    "copyright": "Contenuto disponibile per uso non commerciale ed educativo."
+  },
+  "about": {
+    "pageTitle": "Storia e Scienza",
+    "pageSubtitle": "Duemila anni di mistero, fede e indagine scientifica",
+    "whatIs": {
+      "title": "Che cos'è la Sindone",
+      "p1": "La Sindone di Torino è un telo di lino di 4,42 metri di lunghezza e 1,13 di larghezza, che presenta la doppia immagine, frontale e dorsale, di un uomo che porta i segni di una crocifissione.",
+      "p2": "L'immagine è estremamente superficiale, coinvolgendo solo le fibrille più esterne del tessuto. Non è stata prodotta da pigmenti, pittura, tintura o bruciatura. La formazione dell'immagine rimane, ad oggi, scientificamente inspiegata.",
+      "p3": "Il telo presenta anche macchie di sangue umano di tipo AB, distribuite in corrispondenza delle ferite descritte nei Vangeli: flagellazione, corona di spine, chiodi ai polsi e ai piedi, ferita al costato."
+    },
+    "history": {
+      "title": "La Storia",
+      "t1357": "La prima ostensione documentata avviene a Lirey, in Francia, nella collegiata fondata da Geoffroy de Charny.",
+      "t1453": "Margherita de Charny cede la Sindone ai Duchi di Savoia, che la custodiscono nella Sainte-Chapelle di Chambéry.",
+      "t1532": "Un incendio nella cappella di Chambéry provoca danni e bruciature, successivamente riparate dalle suore Clarisse.",
+      "t1578": "La Sindone viene trasferita a Torino da Emanuele Filiberto di Savoia e custodita nella Cattedrale di San Giovanni Battista.",
+      "t1898": "L'avvocato Secondo Pia realizza la prima fotografia della Sindone. Il negativo rivela un'immagine di straordinaria chiarezza, scuotendo il mondo.",
+      "t1978": "Il progetto STURP (Shroud of Turin Research Project) conduce cinque giorni di analisi scientifiche non distruttive sul telo.",
+      "t1988": "L'esame al radiocarbonio, condotto da tre laboratori indipendenti, data il tessuto tra il 1260 e il 1390 d.C. I risultati sono tuttora contestati.",
+      "t2002": "La Sindone viene sottoposta a un intervento conservativo: vengono rimosse le toppe del XVI secolo e il telo di supporto (telo d'Olanda).",
+      "t2015": "L'ultima ostensione pubblica attira oltre due milioni di pellegrini a Torino."
+    },
+    "science": {
+      "title": "L'Analisi Scientifica",
+      "sturp": {
+        "title": "STURP (1978)",
+        "text": "Il più importante studio scientifico sulla Sindone. Il team concluse che l'immagine non è opera di un artista: non si riscontrano pigmenti, tinture, polveri o altre sostanze applicate. L'immagine è una ossidazione-disidratazione superficiale delle fibrille di lino."
+      },
+      "carbon": {
+        "title": "Datazione al Radiocarbonio (1988)",
+        "text": "Tre laboratori (Oxford, Zurigo, Tucson) datarono un campione di tessuto tra il 1260 e il 1390. Tuttavia ricerche successive hanno sollevato dubbi sulla rappresentatività del campione, che proveniva da un angolo riparato e potenzialmente contaminato."
+      },
+      "pollen": {
+        "title": "Studi sui Pollini",
+        "text": "Il criminologo svizzero Max Frei identificò pollini di piante tipiche della Palestina, dell'Anatolia e dell'Europa, suggerendo un percorso geografico coerente con la tradizione."
+      },
+      "blood": {
+        "title": "Tracce Ematiche",
+        "text": "Le macchie sulla Sindone sono sangue umano di tipo AB. La distribuzione anatomica delle ferite è coerente con una crocifissione romana. La presenza di bilirubina elevata suggerisce un soggetto sottoposto a intenso stress fisico."
+      },
+      "vp8": {
+        "title": "Informazione Tridimensionale (VP-8)",
+        "text": "Nel 1976, l'analizzatore d'immagine VP-8 della NASA rivelò che l'immagine della Sindone contiene informazione tridimensionale codificata nei livelli di luminosità. Nessuna fotografia o dipinto ordinario possiede questa proprietà."
+      }
+    },
+    "debate": {
+      "title": "Il Dibattito sull'Autenticità",
+      "text": "La Sindone rimane uno degli oggetti più controversi e studiati al mondo. I sostenitori dell'autenticità indicano l'inspiegabilità scientifica dell'immagine, la coerenza anatomica, i pollini mediorientali e l'informazione 3D. Gli scettici si basano principalmente sulla datazione al carbonio e sull'assenza di documenti storici prima del XIV secolo. La Chiesa Cattolica non si è mai pronunciata ufficialmente sull'autenticità, definendola un'\"icona della Passione\" e lasciando alla scienza il compito dell'indagine."
+    },
+    "custody": {
+      "title": "La Custodia a Torino",
+      "text": "La Sindone è custodita nella Cattedrale di San Giovanni Battista a Torino, in una teca speciale a temperatura e atmosfera controllata. La Cappella della Sindone, capolavoro barocco di Guarino Guarini (restaurata dopo l'incendio del 1997), si trova adiacente alla cattedrale. Dal 1983 la Sindone è proprietà della Santa Sede, per volontà testamentaria di Umberto II di Savoia, ma resta affidata alla custodia dell'Arcivescovo di Torino."
+    }
+  },
+  "image": {
+    "pageTitle": "Le Immagini",
+    "pageSubtitle": "Confronta le diverse rappresentazioni della Sindone",
+    "negative": {
+      "title": "Il Negativo Fotografico",
+      "text": "Nel 1898, l'avvocato dilettante di fotografia Secondo Pia realizzò la prima fotografia della Sindone durante un'ostensione. Sviluppando la lastra, scoprì con stupore che il negativo fotografico rivelava un'immagine incredibilmente dettagliata e realistica di un volto umano. L'immagine sulla Sindone è, di fatto, un negativo naturale — un fenomeno che nessuno aveva mai osservato prima e che rimane scientificamente inspiegato.",
+      "labelBefore": "Positivo (come appare)",
+      "labelAfter": "Negativo fotografico",
+      "assetNote": "Riferimento archivio: negativi ad alto contrasto a piena lunghezza, mirror pubblico in dominio pubblico."
+    },
+    "uv": {
+      "title": "Immagine UV / Infrarosso",
+      "text": "La fluorescenza ultravioletta rivela dettagli invisibili ad occhio nudo. Le macchie di sangue, in particolare, assorbono la luce UV e appaiono scure, confermando la loro natura organica. L'analisi UV ha anche mostrato che le zone bruciate dall'incendio del 1532 sono fluorescenti, mentre l'immagine corporea non lo è — dimostrando che i due fenomeni hanno origini chimiche diverse.",
+      "labelBefore": "Luce visibile",
+      "labelAfter": "Fluorescenza UV",
+      "renderNote": "Rendering UV simulato a partire dalla scansione ufficiale ad alta risoluzione."
+    },
+    "vp8": {
+      "title": "Rilievo 3D (VP-8)",
+      "text": "Nel 1976, i fisici John Jackson e Eric Jumper elaborarono l'immagine della Sindone con un analizzatore VP-8, uno strumento della NASA progettato per convertire livelli di luminosità in rilievo tridimensionale. Il risultato fu un perfetto rilievo 3D del corpo — qualcosa che non si ottiene con nessuna fotografia o dipinto normale. Ciò dimostra che l'immagine codifica una relazione precisa tra luminosità e distanza corpo-telo.",
+      "labelBefore": "Immagine piana",
+      "labelAfter": "Rilievo 3D VP-8",
+      "renderNote": "Rendering tonale VP-8 simulato per finalita didattiche."
+    }
+  },
+  "sources": {
+    "pageTitle": "Fonti e Crediti",
+    "pageSubtitle": "Risorse, bibliografia e attribuzioni",
+    "imageSourcesTitle": "Fonti delle Immagini",
+    "bibliographyTitle": "Bibliografia",
+    "linksTitle": "Risorse Online",
+    "licenseTitle": "Licenze e Utilizzo",
+    "wikimedia": {
+      "title": "Wikimedia Commons",
+      "desc": "Immagine principale della Sindone — dominio pubblico.",
+      "url": "https://commons.wikimedia.org/wiki/File:Shroud_of_Turin_001.jpg"
+    },
+    "jubilee2025": {
+      "title": "Arcidiocesi di Torino / Avvolti (Giubileo 2025-2026)",
+      "desc": "Progetto digitale ufficiale del Giubileo della Speranza con esperienza immersiva e tavolo interattivo in scala reale.",
+      "url": "https://www.sindone.org/sindone-e-giubileo-a-torino"
+    },
+    "scaleScan": {
+      "title": "Lettura del Telo (Arcidiocesi di Torino)",
+      "desc": "Visore ufficiale ad alta risoluzione della Sindone, base digitale per l'esplorazione 1:1.",
+      "url": "https://www.sindone.org/telo/index1.html"
+    },
+    "millerNegatives": {
+      "title": "Negativi ad alto contrasto (tradizione Vernon Miller, mirror pubblico)",
+      "desc": "Riferimento pubblico in dominio pubblico per negativi full-length usati nelle comparazioni digitali.",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Full_length_negatives_of_the_shroud_of_Turin.jpg"
+    },
+    "halta": {
+      "title": "Haltadefinizione",
+      "desc": "Scansione a 12,8 miliardi di pixel (2008). La riproduzione ad altissima risoluzione disponibile con licenza per uso non commerciale.",
+      "url": "https://www.haltadefinizione.com"
+    },
+    "stera": {
+      "title": "STERA Inc. / Barrie Schwortz",
+      "desc": "Archivio fotografico ufficiale degli studi STURP. Immagini disponibili per uso educativo e non commerciale.",
+      "url": "https://www.shroud.com"
+    },
+    "bib1": {
+      "title": "Antonacci, M. (2000)",
+      "desc": "\"The Resurrection of the Shroud.\" New York: M. Evans and Company."
+    },
+    "bib2": {
+      "title": "Wilson, I. (2010)",
+      "desc": "\"The Shroud: The 2000-Year-Old Mystery Solved.\" London: Bantam Press."
+    },
+    "bib3": {
+      "title": "Rogers, R.N. (2005)",
+      "desc": "\"Studies on the Radiocarbon Sample from the Shroud of Turin.\" Thermochimica Acta, 425(1-2), pp. 189-194."
+    },
+    "bib4": {
+      "title": "Fanti, G. & Malfi, P. (2015)",
+      "desc": "\"The Shroud of Turin: First Century After Christ!\" Singapore: Pan Stanford Publishing."
+    },
+    "bib5": {
+      "title": "Jumper, E.J. et al. (1984)",
+      "desc": "\"A Comprehensive Examination of the Various Stains and Images on the Shroud of Turin.\" ACS Advances in Chemistry, Vol. 205."
+    },
+    "link1": {
+      "title": "Sindone.org",
+      "desc": "Sito ufficiale della Sindone, a cura dell'Arcidiocesi di Torino.",
+      "url": "https://www.sindone.org"
+    },
+    "link2": {
+      "title": "Shroud.com",
+      "desc": "Il più completo archivio online sulla Sindone, curato da Barrie Schwortz.",
+      "url": "https://www.shroud.com"
+    },
+    "link3": {
+      "title": "STURP — Shroud of Turin Research Project",
+      "desc": "Documentazione completa degli studi scientifici del 1978.",
+      "url": "https://www.shroud.com/78docs.htm"
+    },
+    "licenseText": "Questo sito è un progetto indipendente, non commerciale, realizzato per fini divulgativi e devozionali. Le immagini utilizzate provengono da fonti di dominio pubblico o sono utilizzate in conformità con le rispettive licenze per uso educativo. Per richieste specifiche riguardanti le immagini, si prega di contattare i rispettivi titolari dei diritti."
+  },
+  "viewer": {
+    "title": "Vista Gigapixel",
+    "infoTitle": "La Santa Sindone",
+    "infoSource": "Fonte: Wikimedia Commons (dominio pubblico)",
+    "infoRes": "Risoluzione massima disponibile con scansione Haltadefinizione (12,8 Gpx)",
+    "dismiss": "Chiudi",
+    "controlsHint": "Scorri per zoomare · Trascina per esplorare",
+    "errorTitle": "Errore di Caricamento",
+    "errorMsg": "Impossibile caricare le immagini della Sindone. Verifica la connessione internet e riprova.",
+    "backHome": "Torna alla Home"
+  },
+  "error": {
+    "code": "404",
+    "title": "Pagina non trovata",
+    "text": "La pagina che cerchi non esiste o è stata spostata.",
+    "back": "Torna alla Home"
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "nav": {
+    "home": "Home",
+    "sindone": "Shroud",
+    "image": "Image",
+    "viewer": "Gigapixel View",
+    "science": "Science",
+    "sources": "Sources",
+    "langLabel": "Select language"
+  },
+  "hero": {
+    "supra": "Sindon Domini",
+    "title": "The Holy Shroud",
+    "subtitle": "The Burial Cloth of Jesus Christ · Turin",
+    "scrollHint": "Scroll to discover"
+  },
+  "intro": {
+    "heading": "A Mystery that endures through the ages",
+    "text": "The Shroud of Turin is an ancient linen cloth bearing the image of a man who appears to have been crucified. Kept in the Cathedral of Saint John the Baptist in Turin, it is perhaps the most studied and controversial relic in Christian history. This site is a reverent tribute to its history, the science surrounding it, and the mystery it continues to inspire.",
+    "quote": "Ecce homo.",
+    "quoteCite": "John 19:5"
+  },
+  "cards": {
+    "explore": {
+      "title": "Explore the Image",
+      "text": "Navigate the Shroud at extreme resolution with the interactive gigapixel viewer.",
+      "action": "Open viewer →"
+    },
+    "science": {
+      "title": "The Science",
+      "text": "STURP analysis, carbon dating, pollen studies, and blood trace evidence.",
+      "action": "Learn more →"
+    },
+    "images": {
+      "title": "The Images",
+      "text": "Compare the photographic negative, UV images, and the VP-8 three-dimensional relief.",
+      "action": "Compare →"
+    }
+  },
+  "quote": {
+    "text": "The Shroud is a challenge to our intelligence. It first of all requires of every person, in particular the researcher, that he humbly grasp the profound message it sends to his reason and his life.",
+    "cite": "Saint John Paul II — Turin, May 24, 1998"
+  },
+  "footer": {
+    "disclaimer": "This site is not affiliated with the Archdiocese of Turin or the Holy See. It is an independent, non-commercial project created for educational and devotional purposes.",
+    "officialLinks": "Official Links",
+    "archdiocese": "Archdiocese of Turin",
+    "vatican": "Holy See",
+    "sindone": "Sindone.org",
+    "imageCredits": "Image Credits",
+    "madeWith": "Made with ❤️ in Turin",
+    "copyright": "Content available for non-commercial and educational use."
+  },
+  "about": {
+    "pageTitle": "History and Science",
+    "pageSubtitle": "Two thousand years of mystery, faith, and scientific inquiry",
+    "whatIs": {
+      "title": "What is the Shroud",
+      "p1": "The Shroud of Turin is a linen cloth measuring 4.42 metres long and 1.13 metres wide, bearing the double image — front and back — of a man showing the marks of crucifixion.",
+      "p2": "The image is extremely superficial, affecting only the outermost fibrils of the fabric. It was not produced by pigments, paint, dye, or burning. The formation of the image remains, to this day, scientifically unexplained.",
+      "p3": "The cloth also bears stains of human blood, type AB, distributed in correspondence with the wounds described in the Gospels: scourging, crown of thorns, nails in the wrists and feet, and the wound in the side."
+    },
+    "history": {
+      "title": "The History",
+      "t1357": "The first documented exhibition takes place in Lirey, France, at the collegiate church founded by Geoffroy de Charny.",
+      "t1453": "Margaret de Charny transfers the Shroud to the Dukes of Savoy, who keep it in the Sainte-Chapelle in Chambéry.",
+      "t1532": "A fire in the Chambéry chapel causes damage and burn marks, later repaired by the Poor Clare nuns.",
+      "t1578": "The Shroud is transferred to Turin by Emmanuel Philibert of Savoy and housed in the Cathedral of Saint John the Baptist.",
+      "t1898": "Amateur photographer Secondo Pia takes the first photograph of the Shroud. The negative reveals an image of extraordinary clarity, astounding the world.",
+      "t1978": "The STURP project (Shroud of Turin Research Project) conducts five days of non-destructive scientific analysis on the cloth.",
+      "t1988": "Radiocarbon dating, conducted by three independent laboratories, dates the fabric between 1260 and 1390 AD. The results remain contested.",
+      "t2002": "The Shroud undergoes conservation treatment: the 16th-century patches and backing cloth (Holland cloth) are removed.",
+      "t2015": "The last public exhibition draws over two million pilgrims to Turin."
+    },
+    "science": {
+      "title": "Scientific Analysis",
+      "sturp": {
+        "title": "STURP (1978)",
+        "text": "The most important scientific study of the Shroud. The team concluded that the image is not the work of an artist: no pigments, dyes, powders, or other applied substances were found. The image is a surface oxidation-dehydration of the linen fibrils."
+      },
+      "carbon": {
+        "title": "Radiocarbon Dating (1988)",
+        "text": "Three laboratories (Oxford, Zurich, Tucson) dated a fabric sample to between 1260 and 1390. However, subsequent research has raised doubts about the representativeness of the sample, which came from a repaired and potentially contaminated corner."
+      },
+      "pollen": {
+        "title": "Pollen Studies",
+        "text": "Swiss criminologist Max Frei identified pollens from plants typical of Palestine, Anatolia, and Europe, suggesting a geographical path consistent with tradition."
+      },
+      "blood": {
+        "title": "Blood Traces",
+        "text": "The stains on the Shroud are human blood, type AB. The anatomical distribution of the wounds is consistent with Roman crucifixion. Elevated bilirubin levels suggest a subject under intense physical stress."
+      },
+      "vp8": {
+        "title": "Three-Dimensional Information (VP-8)",
+        "text": "In 1976, NASA's VP-8 Image Analyzer revealed that the Shroud image contains three-dimensional information encoded in brightness levels. No ordinary photograph or painting possesses this property."
+      }
+    },
+    "debate": {
+      "title": "The Authenticity Debate",
+      "text": "The Shroud remains one of the most controversial and studied objects in the world. Proponents of authenticity point to the scientifically unexplained nature of the image, anatomical consistency, Middle Eastern pollens, and 3D-encoded information. Sceptics rely primarily on the radiocarbon dating and the absence of historical records before the 14th century. The Catholic Church has never officially declared the Shroud authentic, calling it an \"icon of the Passion\" and leaving the investigation to science."
+    },
+    "custody": {
+      "title": "Custody in Turin",
+      "text": "The Shroud is kept in the Cathedral of Saint John the Baptist in Turin, in a specially designed case with controlled temperature and atmosphere. The Chapel of the Holy Shroud, a Baroque masterpiece by Guarino Guarini (restored after the 1997 fire), is adjacent to the cathedral. Since 1983, the Shroud has been the property of the Holy See, by the testamentary will of Umberto II of Savoy, but remains entrusted to the care of the Archbishop of Turin."
+    }
+  },
+  "image": {
+    "pageTitle": "The Images",
+    "pageSubtitle": "Compare different representations of the Shroud",
+    "negative": {
+      "title": "The Photographic Negative",
+      "text": "In 1898, amateur photographer Secondo Pia took the first photograph of the Shroud during a public exhibition. Upon developing the plate, he discovered with astonishment that the photographic negative revealed an incredibly detailed and realistic image of a human face. The image on the Shroud is, in fact, a natural negative — a phenomenon never observed before, which remains scientifically unexplained.",
+      "labelBefore": "Positive (as it appears)",
+      "labelAfter": "Photographic negative",
+      "assetNote": "Archive reference: full-length high-contrast negatives, publicly mirrored in the public domain."
+    },
+    "uv": {
+      "title": "UV / Infrared Image",
+      "text": "Ultraviolet fluorescence reveals details invisible to the naked eye. The blood stains, in particular, absorb UV light and appear dark, confirming their organic nature. UV analysis also showed that the areas burned in the 1532 fire are fluorescent, while the body image is not — demonstrating that the two phenomena have different chemical origins.",
+      "labelBefore": "Visible light",
+      "labelAfter": "UV fluorescence",
+      "renderNote": "Simulated UV rendering generated from the official high-resolution scan."
+    },
+    "vp8": {
+      "title": "3D Relief (VP-8)",
+      "text": "In 1976, physicists John Jackson and Eric Jumper processed the Shroud image with a VP-8 Image Analyzer, a NASA instrument designed to convert brightness levels into three-dimensional relief. The result was a perfect 3D relief of the body — something not obtainable from any normal photograph or painting. This demonstrates that the image encodes a precise relationship between brightness and body-to-cloth distance.",
+      "labelBefore": "Flat image",
+      "labelAfter": "VP-8 3D relief",
+      "renderNote": "Simulated VP-8 tonal rendering for educational use."
+    }
+  },
+  "sources": {
+    "pageTitle": "Sources and Credits",
+    "pageSubtitle": "Resources, bibliography, and attributions",
+    "imageSourcesTitle": "Image Sources",
+    "bibliographyTitle": "Bibliography",
+    "linksTitle": "Online Resources",
+    "licenseTitle": "Licenses and Usage",
+    "wikimedia": {
+      "title": "Wikimedia Commons",
+      "desc": "Main Shroud image — public domain.",
+      "url": "https://commons.wikimedia.org/wiki/File:Shroud_of_Turin_001.jpg"
+    },
+    "jubilee2025": {
+      "title": "Archdiocese of Turin / Avvolti (Jubilee 2025-2026)",
+      "desc": "Official Jubilee of Hope digital project with immersive experience and life-scale interactive table.",
+      "url": "https://www.sindone.org/sindone-e-giubileo-a-torino"
+    },
+    "scaleScan": {
+      "title": "Reading the Cloth (Archdiocese of Turin)",
+      "desc": "Official high-resolution Shroud viewer used as the digital base for 1:1 exploration.",
+      "url": "https://www.sindone.org/telo/index1.html"
+    },
+    "millerNegatives": {
+      "title": "High-contrast negatives (Vernon Miller tradition, public mirror)",
+      "desc": "Public-domain mirror reference for full-length negatives used in digital comparisons.",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Full_length_negatives_of_the_shroud_of_Turin.jpg"
+    },
+    "halta": {
+      "title": "Haltadefinizione",
+      "desc": "12.8 billion pixel scan (2008). Highest resolution reproduction available under licence for non-commercial use.",
+      "url": "https://www.haltadefinizione.com"
+    },
+    "stera": {
+      "title": "STERA Inc. / Barrie Schwortz",
+      "desc": "Official photographic archive of the STURP studies. Images available for educational and non-commercial use.",
+      "url": "https://www.shroud.com"
+    },
+    "bib1": {
+      "title": "Antonacci, M. (2000)",
+      "desc": "\"The Resurrection of the Shroud.\" New York: M. Evans and Company."
+    },
+    "bib2": {
+      "title": "Wilson, I. (2010)",
+      "desc": "\"The Shroud: The 2000-Year-Old Mystery Solved.\" London: Bantam Press."
+    },
+    "bib3": {
+      "title": "Rogers, R.N. (2005)",
+      "desc": "\"Studies on the Radiocarbon Sample from the Shroud of Turin.\" Thermochimica Acta, 425(1-2), pp. 189-194."
+    },
+    "bib4": {
+      "title": "Fanti, G. & Malfi, P. (2015)",
+      "desc": "\"The Shroud of Turin: First Century After Christ!\" Singapore: Pan Stanford Publishing."
+    },
+    "bib5": {
+      "title": "Jumper, E.J. et al. (1984)",
+      "desc": "\"A Comprehensive Examination of the Various Stains and Images on the Shroud of Turin.\" ACS Advances in Chemistry, Vol. 205."
+    },
+    "link1": {
+      "title": "Sindone.org",
+      "desc": "Official Shroud website, managed by the Archdiocese of Turin.",
+      "url": "https://www.sindone.org"
+    },
+    "link2": {
+      "title": "Shroud.com",
+      "desc": "The most comprehensive online archive on the Shroud, curated by Barrie Schwortz.",
+      "url": "https://www.shroud.com"
+    },
+    "link3": {
+      "title": "STURP — Shroud of Turin Research Project",
+      "desc": "Complete documentation of the 1978 scientific studies.",
+      "url": "https://www.shroud.com/78docs.htm"
+    },
+    "licenseText": "This site is an independent, non-commercial project created for educational and devotional purposes. Images used are sourced from the public domain or used in accordance with their respective licences for educational use. For specific image inquiries, please contact the respective rights holders."
+  },
+  "viewer": {
+    "title": "Gigapixel View",
+    "infoTitle": "The Holy Shroud",
+    "infoSource": "Source: Wikimedia Commons (public domain)",
+    "infoRes": "Maximum resolution available with Haltadefinizione scan (12.8 Gpx)",
+    "dismiss": "Close",
+    "controlsHint": "Scroll to zoom · Drag to explore",
+    "errorTitle": "Loading Error",
+    "errorMsg": "Unable to load the Shroud images. Please check your internet connection and try again.",
+    "backHome": "Back to Home"
+  },
+  "error": {
+    "code": "404",
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or has been moved.",
+    "back": "Back to Home"
+  }
+}

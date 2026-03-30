@@ -1,160 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Santa Sindone — Il Telo funebre di Gesù Cristo · Torino</title>
 
-  <!--
-    Strict Content Security Policy with Trusted-Types.
-    script-src: 'self' + jsDelivr CDN for OpenSeadragon (SRI-verified).
-    worker-src: 'self' for the service worker.
-    require-trusted-types-for 'script' enforces TrustedHTML/TrustedScriptURL
-    for any dynamic DOM insertion. A permissive 'default' policy is installed
-    in js/app.js to maintain OSD compatibility while still documenting intent.
-  -->
+  <!-- SEO -->
+  <meta name="description" content="La Santa Sindone di Torino: esplora l'immagine ad altissima risoluzione, la storia, la scienza e il mistero del telo funebre di Gesù Cristo.">
+  <link rel="canonical" href="https://shinichizero.github.io/holyshroud/">
+  <link rel="alternate" hreflang="it" href="https://shinichizero.github.io/holyshroud/">
+  <link rel="alternate" hreflang="en" href="https://shinichizero.github.io/holyshroud/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="La Santa Sindone — Torino">
+  <meta property="og:description" content="Esplora l'immagine ad altissima risoluzione, la storia e la scienza del telo funebre di Gesù Cristo.">
+  <meta property="og:image" content="https://shinichizero.github.io/holyshroud/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://shinichizero.github.io/holyshroud/">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+
+  <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     script-src 'self' https://cdn.jsdelivr.net;
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: blob:;
-    font-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: blob: https://upload.wikimedia.org;
     connect-src 'self';
-    worker-src 'self';
     require-trusted-types-for 'script';
-    trusted-types default osd-trusted
+    trusted-types shroud-policy;
   ">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Referrer-Policy" content="no-referrer">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 
-  <!-- PWA Web App Manifest -->
-  <link rel="manifest" href="manifest.json">
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="./assets/images/shroud-preview.jpg">
 
-  <!-- iOS PWA support -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Digital Shroud">
-  <!-- Startup images for iPhone 14–17 Pro Max -->
-  <link rel="apple-touch-startup-image"
-        media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)"
-        href="icons/splash-430x932.svg">
-  <link rel="apple-touch-startup-image"
-        media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)"
-        href="icons/splash-393x852.svg">
-  <link rel="apple-touch-startup-image"
-        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
-        href="icons/splash-375x812.svg">
-  <link rel="apple-touch-icon" href="icons/icon-192.svg">
-
-  <!-- Android / general theme colour -->
-  <meta name="theme-color" content="#D4AF37">
-
-  <title>Digital Shroud — Holy Shroud of Turin</title>
-
-  <!-- OpenSeadragon CDN with Subresource Integrity -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/openseadragon@4.1.0/build/openseadragon/openseadragon.min.js"
-    integrity="sha384-4BsIv4BUV37POdA1NZ6UcVAsFk96MQXmFLog7pWs+JP+a8k2XjilfManEVdWDxTe"
-    crossorigin="anonymous"
-    defer
-  ></script>
-
-  <link rel="stylesheet" href="css/app.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/animations.css">
 </head>
 <body>
 
-  <!-- Loading / integrity-check screen -->
-  <div id="loading-screen" aria-live="polite" aria-label="Verifying shrine integrity">
-    <div class="loading-inner">
-      <svg class="loading-cross" viewBox="0 0 60 100" aria-hidden="true">
-        <rect x="22" y="0"  width="16" height="100" fill="#D4AF37"/>
-        <rect x="0"  y="28" width="60" height="16"  fill="#D4AF37"/>
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="site-nav" aria-label="Navigazione principale">
+    <a href="./index.html" class="nav-logo" aria-label="Santa Sindone — Home">
+      <svg viewBox="0 0 30 46" aria-hidden="true">
+        <rect x="11" y="0" width="8" height="46" fill="currentColor"/>
+        <rect x="0" y="12" width="30" height="8" fill="currentColor"/>
       </svg>
-      <p id="loading-status">Verifying Shroud integrity…</p>
+      <span class="nav-logo-text">Santa Sindone</span>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./about.html" data-i18n="nav.sindone">Sindone</a></li>
+      <li><a href="./viewer.html" data-i18n="nav.image">Immagine</a></li>
+      <li><a href="./image.html" data-i18n="nav.science">Scienza</a></li>
+      <li><a href="./sources.html" data-i18n="nav.sources">Fonti</a></li>
+    </ul>
+
+    <div class="lang-switcher" aria-label="Seleziona lingua" data-i18n-aria="nav.langLabel">
+      <button class="lang-btn active" data-lang="it" aria-label="Italiano">IT</button>
+      <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      <button class="lang-btn" data-lang="la" aria-label="Latina">LA</button>
     </div>
-  </div>
 
-  <!-- Main application shell -->
-  <div id="app" hidden>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-    <!-- Windows WCO title-bar drag region -->
-    <div id="titlebar">
-      <span class="titlebar-title">Digital Shroud — Archdiocese of Turin</span>
-      <nav id="titlebar-nav" aria-label="Layer selection">
-        <button class="layer-btn active" data-layer="visible"  aria-pressed="true">Visible</button>
-        <button class="layer-btn"        data-layer="negative" aria-pressed="false">Negative</button>
-        <button class="layer-btn"        data-layer="forensic" aria-pressed="false">Forensic</button>
-      </nav>
+  <!-- ═══ HERO ═══ -->
+  <header class="hero" id="hero">
+    <div class="hero-image">
+      <img src="./assets/images/shroud-preview.jpg"
+           alt="La Santa Sindone di Torino — immagine del telo funebre"
+           width="1200" height="800">
+      <div class="hero-vignette"></div>
     </div>
-
-    <!-- Deep-zoom viewer -->
-    <main id="viewer-wrap" aria-label="Shroud of Turin gigapixel viewer">
-      <div id="osd-viewer" role="img" aria-label="Shroud of Turin deep-zoom image"></div>
-
-      <!-- SVG hotspot overlay (positioned absolutely over the viewer) -->
-      <svg id="hotspot-overlay"
-           viewBox="0 0 1 1"
-           preserveAspectRatio="none"
-           aria-label="Wound annotations"
-           role="group">
-        <!-- Hotspots injected by js/hotspots.js -->
-      </svg>
-    </main>
-
-    <!-- Annotation panel (slides in on hotspot tap) -->
-    <aside id="annotation-panel" hidden aria-modal="true" role="dialog" aria-label="Wound annotation">
-      <button id="annotation-close" aria-label="Close annotation">✕</button>
-      <h2 id="annotation-title"></h2>
-      <blockquote id="annotation-verse"></blockquote>
-      <p id="annotation-forensic"></p>
-    </aside>
-
-    <!-- Layer selector visible on mobile (below the titlebar) -->
-    <div id="mobile-layer-bar" aria-label="Layer selection (mobile)">
-      <button class="layer-btn active" data-layer="visible"  aria-pressed="true">Visible</button>
-      <button class="layer-btn"        data-layer="negative" aria-pressed="false">Negative</button>
-      <button class="layer-btn"        data-layer="forensic" aria-pressed="false">Forensic</button>
+    <div class="hero-content">
+      <p class="hero-supra" data-i18n="hero.supra">Sindon Domini</p>
+      <h1 class="hero-title" data-i18n="hero.title">La Santa Sindone</h1>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">Il Telo funebre di Gesù Cristo · Torino</p>
+      <hr class="hero-rule">
     </div>
-  </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </header>
 
-  <!-- Trusted-Types default policy.
-       OpenSeadragon uses innerHTML for its control overlays, so a default policy
-       is required for OSD compatibility. The policy sanitizes inputs by stripping
-       <script> tags and inline event-handler attributes before passing through,
-       limiting exposure while maintaining OSD functionality.
-       The separate 'osd-trusted' policy name is declared in the CSP so this
-       module is the only authorised source of trusted values.
-  -->
-  <script>
-    if (typeof trustedTypes !== 'undefined' && trustedTypes.createPolicy) {
-      const FORBIDDEN_TAGS = /<script[\s\S]*?>[\s\S]*?<\/script\s*>/gi;
-      const FORBIDDEN_HANDLERS = /\bon\w+\s*=/gi;
+  <main class="page-container">
 
-      function sanitizeHTML(s) {
-        if (FORBIDDEN_TAGS.test(s) || FORBIDDEN_HANDLERS.test(s)) {
-          console.warn('[TrustedTypes] Blocked potentially unsafe HTML injection');
-          return '';
-        }
-        return s;
-      }
+    <!-- ═══ INTRODUCTION ═══ -->
+    <section class="section section-narrow section-centered reveal">
+      <h2 data-i18n="intro.heading">Un Mistero che perdura nei secoli</h2>
+      <hr>
+      <p data-i18n="intro.text">
+        La Sindone di Torino è un antico telo di lino che porta l'immagine di un uomo che sembra essere stato crocifisso. Custodita nella Cattedrale di San Giovanni Battista a Torino, è forse la reliquia più studiata e controversa della storia cristiana. Questo sito è un omaggio reverente alla sua storia, alla scienza che la circonda e al mistero che continua a suscitare.
+      </p>
+      <blockquote>
+        <span data-i18n="intro.quote">Ecce homo.</span>
+        <cite data-i18n="intro.quoteCite">Giovanni 19,5</cite>
+      </blockquote>
+    </section>
 
-      // Default policy: used by OSD for innerHTML; sanitizes HTML, passes scripts
-      // and script URLs from the app's own scope only.
-      trustedTypes.createPolicy('default', {
-        createHTML:      s => sanitizeHTML(s),
-        createScript:    s => s,
-        createScriptURL: s => {
-          const url = new URL(s, location.origin);
-          if (url.origin !== location.origin &&
-              url.origin !== 'https://cdn.jsdelivr.net') {
-            console.warn('[TrustedTypes] Blocked untrusted script URL:', s);
-            return '';
-          }
-          return s;
-        }
-      });
-    }
-  </script>
+    <!-- ═══ FEATURE CARDS ═══ -->
+    <section class="section section-wide reveal">
+      <div class="grid grid-3">
+        <a href="./viewer.html" class="feature-card" id="card-explore">
+          <div class="feature-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3 data-i18n="cards.explore.title">Esplora l'Immagine</h3>
+          <p data-i18n="cards.explore.text">Naviga nella Sindone ad altissima risoluzione con il visore gigapixel interattivo.</p>
+          <span class="card-arrow" data-i18n="cards.explore.action">Apri il visore →</span>
+        </a>
 
-  <script src="js/integrity.js" defer></script>
-  <script src="js/hotspots.js"  defer></script>
-  <script src="js/app.js"       defer></script>
+        <a href="./about.html" class="feature-card" id="card-science">
+          <div class="feature-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 3v7.19A5 5 0 1 0 15 3V10.19"/><circle cx="12" cy="17" r="4"/></svg>
+          </div>
+          <h3 data-i18n="cards.science.title">La Scienza</h3>
+          <p data-i18n="cards.science.text">Analisi STURP, datazione al carbonio, studi sui pollini e sulle tracce ematiche.</p>
+          <span class="card-arrow" data-i18n="cards.science.action">Approfondisci →</span>
+        </a>
+
+        <a href="./image.html" class="feature-card" id="card-images">
+          <div class="feature-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20"/><path d="M17 2v20"/><path d="M2 12h20"/></svg>
+          </div>
+          <h3 data-i18n="cards.images.title">Le Immagini</h3>
+          <p data-i18n="cards.images.text">Confronta il negativo fotografico, le immagini UV e il rilievo tridimensionale VP-8.</p>
+          <span class="card-arrow" data-i18n="cards.images.action">Confronta →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══ FULL-WIDTH QUOTE ═══ -->
+    <section class="quote-section reveal">
+      <blockquote>
+        <span data-i18n="quote.text">La Sindone è una sfida all'intelligenza. Essa richiede innanzitutto l'impegno di ogni uomo, in particolare del ricercatore, a cogliere con umiltà il messaggio profondo inviato alla sua ragione e alla sua vita.</span>
+        <cite data-i18n="quote.cite">San Giovanni Paolo II — Torino, 24 maggio 1998</cite>
+      </blockquote>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-disclaimer">
+        <p data-i18n="footer.disclaimer">Questo sito non è affiliato con l'Arcidiocesi di Torino né con la Santa Sede. È un progetto indipendente, non commerciale, realizzato per fini divulgativi e devozionali.</p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.officialLinks">Collegamenti ufficiali</h4>
+        <ul>
+          <li><a href="https://www.diocesi.torino.it" target="_blank" rel="noopener noreferrer" data-i18n="footer.archdiocese">Arcidiocesi di Torino</a></li>
+          <li><a href="https://www.vatican.va" target="_blank" rel="noopener noreferrer" data-i18n="footer.vatican">Santa Sede</a></li>
+          <li><a href="https://www.sindone.org" target="_blank" rel="noopener noreferrer" data-i18n="footer.sindone">Sindone.org</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.imageCredits">Crediti immagini</h4>
+        <ul>
+          <li><a href="./sources.html">Wikimedia Commons</a></li>
+          <li><a href="./sources.html">Haltadefinizione</a></li>
+          <li><a href="./sources.html">STERA Inc.</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p><span data-i18n="footer.madeWith">Sito realizzato con ❤️ a Torino</span> · <span data-i18n="footer.copyright">Contenuto disponibile per uso non commerciale ed educativo.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/trustedTypes.js"></script>
+  <script src="./js/i18n.js" defer></script>
+  <script src="./js/main.js" defer></script>
 </body>
 </html>

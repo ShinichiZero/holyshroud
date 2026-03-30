@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "home": "Domus",
+    "sindone": "Sindon",
+    "image": "Imago",
+    "viewer": "Conspectus Gigapixel",
+    "science": "Scientia",
+    "sources": "Fontes",
+    "langLabel": "Elige linguam"
+  },
+  "hero": {
+    "supra": "Sindon Domini",
+    "title": "Sancta Sindon",
+    "subtitle": "Linteum Sepulcrale Iesu Christi · Taurinum",
+    "scrollHint": "Volve ut invenias"
+  },
+  "intro": {
+    "heading": "Mysterium quod per saecula perdurat",
+    "quote": "Ecce homo.",
+    "quoteCite": "Ioannes 19,5"
+  },
+  "cards": {
+    "explore": {
+      "title": "Imaginem Explora",
+      "action": "Aperi conspectum →"
+    },
+    "science": {
+      "title": "Scientia",
+      "action": "Lege amplius →"
+    },
+    "images": {
+      "title": "Imagines",
+      "action": "Compara →"
+    }
+  },
+  "quote": {
+    "text": "Sindon provocatio est intellectui. Ante omnia postulat ab unoquoque homine, praesertim a scrutatore, ut humiliter capiat nuntium profundum quem rationi vitaeque eius mittit.",
+    "cite": "Sanctus Ioannes Paulus II — Taurinum, die XXIV mensis Maii, MCMXCVIII"
+  },
+  "footer": {
+    "disclaimer": "Haec pagina non est coniuncta cum Archidioecesi Taurinensi neque cum Sancta Sede. Opus independens est, non commerciale, ad fines divulgationis et devotionis creatum.",
+    "officialLinks": "Nexus Officiales",
+    "archdiocese": "Archidioecesis Taurinensis",
+    "vatican": "Sancta Sedes",
+    "sindone": "Sindone.org",
+    "imageCredits": "Fontes Imaginum",
+    "madeWith": "Factum cum ❤️ Taurini",
+    "copyright": "Contentum pro usu non commerciali et educativo praesto est."
+  },
+  "about": {
+    "pageTitle": "Historia et Scientia",
+    "pageSubtitle": "Duo milia annorum mysterii, fidei et inquisitionis scientificae",
+    "whatIs": {
+      "title": "Quid est Sindon"
+    },
+    "history": {
+      "title": "Historia"
+    },
+    "science": {
+      "title": "Analysis Scientifica",
+      "sturp": { "title": "STURP (MCMLXXVIII)" },
+      "carbon": { "title": "Datatio Radiocarbonica (MCMLXXXVIII)" },
+      "pollen": { "title": "Studia Pollinum" },
+      "blood": { "title": "Vestigia Sanguinis" },
+      "vp8": { "title": "Informatio Tridimensionalis (VP-8)" }
+    },
+    "debate": {
+      "title": "Disputatio de Authenticitate"
+    },
+    "custody": {
+      "title": "Custodia Taurini"
+    }
+  },
+  "image": {
+    "pageTitle": "Imagines",
+    "pageSubtitle": "Compara diversas Sindonis repraesentationes",
+    "negative": {
+      "title": "Negativum Photographicum",
+      "labelBefore": "Positivum (ut apparet)",
+      "labelAfter": "Negativum photographicum"
+    },
+    "uv": {
+      "title": "Imago UV / Infraruber",
+      "labelBefore": "Lux visibilis",
+      "labelAfter": "Fluorescentia UV"
+    },
+    "vp8": {
+      "title": "Relevium 3D (VP-8)",
+      "labelBefore": "Imago plana",
+      "labelAfter": "Relevium 3D VP-8"
+    }
+  },
+  "sources": {
+    "pageTitle": "Fontes et Merita",
+    "pageSubtitle": "Opes, bibliographia et attributiones",
+    "imageSourcesTitle": "Fontes Imaginum",
+    "bibliographyTitle": "Bibliographia",
+    "linksTitle": "Opes in Rete",
+    "licenseTitle": "Licentiae et Usus"
+  },
+  "viewer": {
+    "title": "Conspectus Gigapixel",
+    "infoTitle": "Sancta Sindon",
+    "dismiss": "Claude",
+    "controlsHint": "Volve ad augendam · Trahe ad explorandum",
+    "errorTitle": "Error Onerationis",
+    "backHome": "Redi ad Domum"
+  },
+  "error": {
+    "code": "CDIV",
+    "title": "Pagina non inventa",
+    "text": "Pagina quam quaeris non exstat vel mota est.",
+    "back": "Redi ad Domum"
+  }
+}

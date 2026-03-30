@@ -1,0 +1,143 @@
+/* ═══════════════════════════════════════════════════════════
+   VIEWER — OpenSeadragon Gigapixel Viewer Styles
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Viewer Page Layout ── */
+.viewer-page {
+  background: var(--color-void);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.viewer-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-6);
+  background: rgba(10, 8, 7, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.06);
+  height: 60px;
+}
+
+.viewer-nav .nav-logo {
+  gap: var(--space-2);
+}
+
+.viewer-nav .nav-logo svg {
+  width: 22px;
+  height: 33px;
+}
+
+.viewer-nav .nav-logo-text {
+  font-size: 1rem;
+}
+
+.viewer-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-linen);
+  letter-spacing: 0.04em;
+}
+
+/* ── OpenSeadragon Container ── */
+.viewer-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  margin-top: 60px;
+  background: var(--color-void);
+}
+
+/* ── Override OSD default styles ── */
+.viewer-container .navigator {
+  border: 1px solid var(--color-stone) !important;
+  background: var(--color-shadow) !important;
+  border-radius: var(--border-radius-sm);
+  opacity: 0.85;
+  transition: opacity var(--duration-fast) var(--ease-sacred);
+}
+
+.viewer-container .navigator:hover {
+  opacity: 1;
+}
+
+.viewer-container .displayregion {
+  border: 1px solid var(--color-gold) !important;
+}
+
+/* ── OSD Control Buttons ── */
+.viewer-container .openseadragon-container button {
+  filter: invert(0.7) sepia(0.3) hue-rotate(10deg);
+  opacity: 0.6;
+  transition: opacity var(--duration-fast) var(--ease-sacred);
+}
+
+.viewer-container .openseadragon-container button:hover {
+  opacity: 1;
+}
+
+/* ── Viewer Responsive ── */
+@media (max-width: 900px) {
+  .viewer-nav {
+    padding: var(--space-3) var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .viewer-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+
+  .viewer-nav .lang-switcher {
+    transform: scale(0.92);
+    transform-origin: center right;
+  }
+
+  .info-panel {
+    left: var(--space-3);
+    right: var(--space-3);
+    bottom: var(--space-3);
+    max-width: none;
+    padding: var(--space-5);
+  }
+
+  .controls-hint {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(var(--space-3) + 120px);
+    text-align: center;
+    width: calc(100% - (var(--space-6) * 2));
+  }
+}
+
+@media (max-width: 600px) {
+  .viewer-title {
+    display: none;
+  }
+
+  .viewer-nav .nav-logo-text {
+    display: none;
+  }
+
+  .viewer-nav .nav-logo svg {
+    width: 20px;
+    height: 30px;
+  }
+
+  .viewer-nav .lang-switcher {
+    transform: scale(0.86);
+  }
+
+  .viewer-container .navigator {
+    width: 110px !important;
+    height: auto !important;
+  }
+}
