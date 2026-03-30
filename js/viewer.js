@@ -178,7 +178,6 @@
 
     viewer = OpenSeadragon({
       id: 'osd-viewer',
-      tileSources: config.tileSource,
       showNavigator: true,
       navigatorPosition: 'TOP_RIGHT',
       showFullPageControl: true,
@@ -228,6 +227,18 @@
     viewer.addHandler('tile-load-failed', function (event) {
       console.warn('[Viewer] Tile failed to load:', event);
     });
+
+    try {
+      viewer.open(config.tileSource);
+    } catch (e) {
+      if (loadSettled) return;
+      if (loadNonce !== activeLoadNonce) return;
+      if (sourceIndex !== activeSourceIndex) return;
+
+      loadSettled = true;
+      clearTimeout(failoverTimeout);
+      handleSourceFailure('open-exception: ' + (e && e.message ? e.message : e), sourceIndex, loadNonce);
+    }
   }
 
   function destroyViewer() {
