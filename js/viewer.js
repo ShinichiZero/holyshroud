@@ -13,6 +13,7 @@
 
   var sourceConfigs = buildSourceConfigs();
   var activeSourceIndex = -1;
+  var activeLoadNonce = 0;
   var viewer = null;
 
   if (typeof OpenSeadragon === 'undefined') {
@@ -148,6 +149,8 @@
 
   function loadSourceAt(index) {
     activeSourceIndex = index;
+    activeLoadNonce += 1;
+    var loadNonce = activeLoadNonce;
 
     if (index >= sourceConfigs.length) {
       showError(localizedText({
@@ -162,13 +165,15 @@
     updateInfoPanel(config);
 
     try {
-      initViewer(config);
+      initViewer(config, index, loadNonce);
     } catch (e) {
-      handleSourceFailure('exception: ' + (e && e.message ? e.message : e));
+      handleSourceFailure('exception: ' + (e && e.message ? e.message : e), index, loadNonce);
     }
   }
 
-  function initViewer(config) {
+  function initViewer(config, sourceIndex, loadNonce) {
+    var loadSettled = false;
+
     destroyViewer();
 
     viewer = OpenSeadragon({
@@ -190,13 +195,34 @@
       background: '#0a0807'
     });
 
+    var failoverTimeout = setTimeout(function () {
+      if (loadSettled) return;
+      if (loadNonce !== activeLoadNonce) return;
+      if (sourceIndex !== activeSourceIndex) return;
+
+      loadSettled = true;
+      handleSourceFailure('timeout: ' + config.id, sourceIndex, loadNonce);
+    }, 12000);
+
     viewer.addHandler('open', function () {
+      if (loadSettled) return;
+      if (loadNonce !== activeLoadNonce) return;
+      if (sourceIndex !== activeSourceIndex) return;
+
+      loadSettled = true;
+      clearTimeout(failoverTimeout);
       console.info('[Viewer] Loaded source:', config.id);
       updateInfoPanel(config);
     });
 
     viewer.addHandler('open-failed', function () {
-      handleSourceFailure('open-failed: ' + config.id);
+      if (loadSettled) return;
+      if (loadNonce !== activeLoadNonce) return;
+      if (sourceIndex !== activeSourceIndex) return;
+
+      loadSettled = true;
+      clearTimeout(failoverTimeout);
+      handleSourceFailure('open-failed: ' + config.id, sourceIndex, loadNonce);
     });
 
     viewer.addHandler('tile-load-failed', function (event) {
@@ -216,7 +242,15 @@
     viewer = null;
   }
 
-  function handleSourceFailure(reason) {
+  function handleSourceFailure(reason, sourceIndex, loadNonce) {
+    if (typeof sourceIndex === 'number' && sourceIndex !== activeSourceIndex) {
+      return;
+    }
+
+    if (typeof loadNonce === 'number' && loadNonce !== activeLoadNonce) {
+      return;
+    }
+
     console.warn('[Viewer] Source failed:', reason);
     destroyViewer();
 
