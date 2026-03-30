@@ -271,11 +271,40 @@
       return;
     }
 
-    showError(localizedText({
-      it: 'Impossibile caricare le immagini della Sindone.',
-      en: 'Unable to load the Shroud images.',
-      la: 'Imagines Sindonis onerari non possunt.'
-    }));
+    renderStaticFallback();
+  }
+
+  function renderStaticFallback() {
+    var title = localizedText({
+      it: 'Vista statica della Sindone',
+      en: 'Static Shroud View',
+      la: 'Conspectus staticus Sindonis'
+    });
+
+    var body = localizedText({
+      it: 'Il visore interattivo non e disponibile in questo momento. E mostrata un\'immagine statica ad alta qualita.',
+      en: 'The interactive viewer is unavailable right now. A high-quality static image is shown instead.',
+      la: 'Conspectus interactivus nunc praesto non est. Imago statica altae qualitatis ostenditur.'
+    });
+
+    var imgAlt = localizedText({
+      it: 'Anteprima statica della Sindone di Torino',
+      en: 'Static preview of the Shroud of Turin',
+      la: 'Praevisio statica Sindonis Taurinensis'
+    });
+
+    var fallbackHTML = '<div class="viewer-error">' +
+      '<h2>' + escapeHtml(title) + '</h2>' +
+      '<p>' + escapeHtml(body) + '</p>' +
+      '<img src="./assets/images/shroud-preview.jpg" alt="' + escapeHtml(imgAlt) + '" style="max-width:min(96vw,980px); width:100%; border:1px solid #1e1a17; border-radius:8px; margin-top:1.25rem;" />' +
+      '<a href="./index.html" class="btn" style="margin-top:2rem;" data-i18n="viewer.backHome">Torna alla Home</a>' +
+      '</div>';
+
+    if (window.shroudPolicy && typeof window.shroudPolicy.createHTML === 'function') {
+      viewerContainer.innerHTML = window.shroudPolicy.createHTML(fallbackHTML);
+    } else {
+      viewerContainer.innerHTML = fallbackHTML;
+    }
   }
 
   function escapeHtml(value) {
