@@ -65,10 +65,7 @@
     configs.push(
       {
         id: 'archdiocese-jubilee-scan',
-        tileSource: {
-          type: 'image',
-          url: 'https://www.sindone.org/telo/sindone.jpg'
-        },
+        tileSource: 'https://www.sindone.org/telo/sindone.jpg',
         sourceLabel: {
           it: 'Fonte: Arcidiocesi di Torino, lettura ufficiale del Telo',
           en: 'Source: Archdiocese of Turin, official cloth reader',
@@ -82,10 +79,7 @@
       },
       {
         id: 'miller-negative-public-mirror',
-        tileSource: {
-          type: 'image',
-          url: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Full_length_negatives_of_the_shroud_of_Turin.jpg'
-        },
+        tileSource: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Full_length_negatives_of_the_shroud_of_Turin.jpg',
         sourceLabel: {
           it: 'Fonte: Wikimedia Commons (dominio pubblico), negativo ad alto contrasto',
           en: 'Source: Wikimedia Commons (public domain), high-contrast negative',
@@ -99,10 +93,7 @@
       },
       {
         id: 'local-preview',
-        tileSource: {
-          type: 'image',
-          url: './assets/images/shroud-preview.jpg'
-        },
+        tileSource: './assets/images/shroud-preview.jpg',
         sourceLabel: {
           it: 'Fonte: Anteprima locale del progetto',
           en: 'Source: Local project preview',
@@ -191,6 +182,8 @@
       minZoomImageRatio: 0.5,
       maxZoomPixelRatio: 20,
       prefixUrl: 'https://cdn.jsdelivr.net/npm/openseadragon@4.1.0/build/openseadragon/images/',
+      crossOriginPolicy: 'Anonymous',
+      ajaxWithCredentials: false,
       background: '#0a0807'
     });
 
@@ -201,7 +194,7 @@
 
       loadSettled = true;
       handleSourceFailure('timeout: ' + config.id, sourceIndex, loadNonce);
-    }, 12000);
+    }, 30000);
 
     viewer.addHandler('open', function () {
       if (loadSettled) return;
@@ -214,14 +207,14 @@
       updateInfoPanel(config);
     });
 
-    viewer.addHandler('open-failed', function () {
+    viewer.addHandler('open-failed', function (event) {
       if (loadSettled) return;
       if (loadNonce !== activeLoadNonce) return;
       if (sourceIndex !== activeSourceIndex) return;
 
       loadSettled = true;
       clearTimeout(failoverTimeout);
-      handleSourceFailure('open-failed: ' + config.id, sourceIndex, loadNonce);
+      handleSourceFailure('open-failed: ' + config.id + (event && event.message ? ' (' + event.message + ')' : ''), sourceIndex, loadNonce);
     });
 
     viewer.addHandler('tile-load-failed', function (event) {
