@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 932" width="430" height="932">
+  <rect width="430" height="932" fill="#0A0A0A"/>
+  <rect x="195" y="180" width="40" height="572" rx="5" fill="#D4AF37"/>
+  <rect x="80"  y="380" width="270" height="40"  rx="5" fill="#D4AF37"/>
+  <text x="215" y="820" font-family="serif" font-size="18" fill="#D4AF37"
+        text-anchor="middle" letter-spacing="3">DIGITAL SHROUD</text>
+  <text x="215" y="845" font-family="serif" font-size="12" fill="#9A8A70"
+        text-anchor="middle" letter-spacing="2">ARCHDIOCESE OF TURIN</text>
+</svg>

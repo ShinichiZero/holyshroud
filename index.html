@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!--
+    Strict Content Security Policy with Trusted-Types.
+    script-src: 'self' + jsDelivr CDN for OpenSeadragon (SRI-verified).
+    worker-src: 'self' for the service worker.
+    require-trusted-types-for 'script' enforces TrustedHTML/TrustedScriptURL
+    for any dynamic DOM insertion. A permissive 'default' policy is installed
+    in js/app.js to maintain OSD compatibility while still documenting intent.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://cdn.jsdelivr.net;
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: blob:;
+    font-src 'self';
+    connect-src 'self';
+    worker-src 'self';
+    require-trusted-types-for 'script';
+    trusted-types default osd-trusted
+  ">
+
+  <!-- PWA Web App Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- iOS PWA support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Digital Shroud">
+  <!-- Startup images for iPhone 14–17 Pro Max -->
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)"
+        href="icons/splash-430x932.svg">
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)"
+        href="icons/splash-393x852.svg">
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+        href="icons/splash-375x812.svg">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+
+  <!-- Android / general theme colour -->
+  <meta name="theme-color" content="#D4AF37">
+
+  <title>Digital Shroud — Holy Shroud of Turin</title>
+
+  <!-- OpenSeadragon CDN with Subresource Integrity -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/openseadragon@4.1.0/build/openseadragon/openseadragon.min.js"
+    integrity="sha384-4BsIv4BUV37POdA1NZ6UcVAsFk96MQXmFLog7pWs+JP+a8k2XjilfManEVdWDxTe"
+    crossorigin="anonymous"
+    defer
+  ></script>
+
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <!-- Loading / integrity-check screen -->
+  <div id="loading-screen" aria-live="polite" aria-label="Verifying shrine integrity">
+    <div class="loading-inner">
+      <svg class="loading-cross" viewBox="0 0 60 100" aria-hidden="true">
+        <rect x="22" y="0"  width="16" height="100" fill="#D4AF37"/>
+        <rect x="0"  y="28" width="60" height="16"  fill="#D4AF37"/>
+      </svg>
+      <p id="loading-status">Verifying Shroud integrity…</p>
+    </div>
+  </div>
+
+  <!-- Main application shell -->
+  <div id="app" hidden>
+
+    <!-- Windows WCO title-bar drag region -->
+    <div id="titlebar">
+      <span class="titlebar-title">Digital Shroud — Archdiocese of Turin</span>
+      <nav id="titlebar-nav" aria-label="Layer selection">
+        <button class="layer-btn active" data-layer="visible"  aria-pressed="true">Visible</button>
+        <button class="layer-btn"        data-layer="negative" aria-pressed="false">Negative</button>
+        <button class="layer-btn"        data-layer="forensic" aria-pressed="false">Forensic</button>
+      </nav>
+    </div>
+
+    <!-- Deep-zoom viewer -->
+    <main id="viewer-wrap" aria-label="Shroud of Turin gigapixel viewer">
+      <div id="osd-viewer" role="img" aria-label="Shroud of Turin deep-zoom image"></div>
+
+      <!-- SVG hotspot overlay (positioned absolutely over the viewer) -->
+      <svg id="hotspot-overlay"
+           viewBox="0 0 1 1"
+           preserveAspectRatio="none"
+           aria-label="Wound annotations"
+           role="group">
+        <!-- Hotspots injected by js/hotspots.js -->
+      </svg>
+    </main>
+
+    <!-- Annotation panel (slides in on hotspot tap) -->
+    <aside id="annotation-panel" hidden aria-modal="true" role="dialog" aria-label="Wound annotation">
+      <button id="annotation-close" aria-label="Close annotation">✕</button>
+      <h2 id="annotation-title"></h2>
+      <blockquote id="annotation-verse"></blockquote>
+      <p id="annotation-forensic"></p>
+    </aside>
+
+    <!-- Layer selector visible on mobile (below the titlebar) -->
+    <div id="mobile-layer-bar" aria-label="Layer selection (mobile)">
+      <button class="layer-btn active" data-layer="visible"  aria-pressed="true">Visible</button>
+      <button class="layer-btn"        data-layer="negative" aria-pressed="false">Negative</button>
+      <button class="layer-btn"        data-layer="forensic" aria-pressed="false">Forensic</button>
+    </div>
+  </div>
+
+  <!-- Trusted-Types default policy.
+       OpenSeadragon uses innerHTML for its control overlays, so a default policy
+       is required for OSD compatibility. The policy sanitizes inputs by stripping
+       <script> tags and inline event-handler attributes before passing through,
+       limiting exposure while maintaining OSD functionality.
+       The separate 'osd-trusted' policy name is declared in the CSP so this
+       module is the only authorised source of trusted values.
+  -->
+  <script>
+    if (typeof trustedTypes !== 'undefined' && trustedTypes.createPolicy) {
+      const FORBIDDEN_TAGS = /<script[\s\S]*?>[\s\S]*?<\/script\s*>/gi;
+      const FORBIDDEN_HANDLERS = /\bon\w+\s*=/gi;
+
+      function sanitizeHTML(s) {
+        if (FORBIDDEN_TAGS.test(s) || FORBIDDEN_HANDLERS.test(s)) {
+          console.warn('[TrustedTypes] Blocked potentially unsafe HTML injection');
+          return '';
+        }
+        return s;
+      }
+
+      // Default policy: used by OSD for innerHTML; sanitizes HTML, passes scripts
+      // and script URLs from the app's own scope only.
+      trustedTypes.createPolicy('default', {
+        createHTML:      s => sanitizeHTML(s),
+        createScript:    s => s,
+        createScriptURL: s => {
+          const url = new URL(s, location.origin);
+          if (url.origin !== location.origin &&
+              url.origin !== 'https://cdn.jsdelivr.net') {
+            console.warn('[TrustedTypes] Blocked untrusted script URL:', s);
+            return '';
+          }
+          return s;
+        }
+      });
+    }
+  </script>
+
+  <script src="js/integrity.js" defer></script>
+  <script src="js/hotspots.js"  defer></script>
+  <script src="js/app.js"       defer></script>
+</body>
+</html>

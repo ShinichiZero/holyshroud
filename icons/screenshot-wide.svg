@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#0A0A0A"/>
+  <text x="640" y="320" font-family="serif" font-size="48" fill="#D4AF37"
+        text-anchor="middle" letter-spacing="6">DIGITAL SHROUD</text>
+  <text x="640" y="380" font-family="serif" font-size="22" fill="#9A8A70"
+        text-anchor="middle" letter-spacing="4">ARCHDIOCESE OF TURIN — GIGAPIXEL VIEWER</text>
+  <rect x="560" y="420" width="160" height="4" rx="2" fill="#D4AF37" opacity="0.5"/>
+</svg>

@@ -1,0 +1,360 @@
+/* ==========================================================================
+   Digital Shroud PWA — Application Styles
+   Palette: Deep Charcoal #0A0A0A · Vatican Gold #D4AF37
+   ========================================================================== */
+
+/* --- Custom Properties ---------------------------------------------------- */
+:root {
+  --charcoal:      #0A0A0A;
+  --charcoal-mid:  #1A1A1A;
+  --charcoal-soft: #2C2C2C;
+  --gold:          #D4AF37;
+  --gold-dim:      #A88A28;
+  --gold-glow:     rgba(212, 175, 55, 0.35);
+  --text-primary:  #F0E8D0;
+  --text-muted:    #9A8A70;
+  --overlay-bg:    rgba(10, 10, 10, 0.82);
+  --blur-heavy:    blur(20px);
+  --blur-light:    blur(10px);
+
+  /* iOS safe-area / Dynamic Island */
+  --safe-top:    env(safe-area-inset-top,    0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left:   env(safe-area-inset-left,   0px);
+  --safe-right:  env(safe-area-inset-right,  0px);
+
+  /* Windows Controls Overlay (WCO) titlebar geometry */
+  --titlebar-area-x:      env(titlebar-area-x,      0px);
+  --titlebar-area-y:      env(titlebar-area-y,      0px);
+  --titlebar-area-width:  env(titlebar-area-width,  100%);
+  --titlebar-area-height: env(titlebar-area-height, 48px);
+}
+
+/* --- Reset & Base --------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--charcoal);
+  color: var(--text-primary);
+  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Loading Screen ------------------------------------------------------- */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--charcoal);
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loading-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loading-cross {
+  width: 60px;
+  height: 100px;
+  animation: cross-pulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px var(--gold));
+}
+
+@keyframes cross-pulse {
+  0%, 100% { opacity: 1;    transform: scale(1);    }
+  50%       { opacity: 0.6; transform: scale(0.95); }
+}
+
+#loading-status {
+  color: var(--gold);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* --- Application Shell ---------------------------------------------------- */
+#app {
+  display: grid;
+  height: 100%;
+  /* titlebar row + viewer + mobile-layer-bar */
+  grid-template-rows: var(--titlebar-area-height) 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "titlebar"
+    "viewer"
+    "mobile-bar";
+  padding-bottom: var(--safe-bottom);
+}
+
+#app[hidden] { display: none; }
+
+/* --- Titlebar (WCO + regular) --------------------------------------------- */
+#titlebar {
+  grid-area: titlebar;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:
+    max(var(--safe-top), var(--titlebar-area-y))
+    max(var(--safe-right), 1rem)
+    0
+    max(var(--safe-left),  1rem);
+  background: var(--overlay-bg);
+  backdrop-filter: var(--blur-heavy);
+  -webkit-backdrop-filter: var(--blur-heavy);
+  border-bottom: 1px solid var(--gold-dim);
+
+  /* WCO: position inside the browser-chrome titlebar area */
+  position: fixed;
+  top:    var(--titlebar-area-y);
+  left:   var(--titlebar-area-x);
+  width:  var(--titlebar-area-width);
+  height: var(--titlebar-area-height);
+  -webkit-app-region: drag;
+  app-region: drag;
+  z-index: 100;
+}
+
+.titlebar-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Layer nav inside titlebar (no drag on buttons) */
+#titlebar-nav {
+  display: none;       /* shown on larger screens via media query */
+  gap: 0.25rem;
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+}
+
+@media (min-width: 640px) {
+  #titlebar-nav { display: flex; }
+  #mobile-layer-bar { display: none; }
+}
+
+/* --- Layer Toggle Buttons ------------------------------------------------- */
+.layer-btn {
+  background: transparent;
+  border: 1px solid var(--gold-dim);
+  color: var(--text-muted);
+  padding: 0.25rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.layer-btn:hover, .layer-btn:focus-visible {
+  background: var(--gold-glow);
+  color: var(--gold);
+  border-color: var(--gold);
+  outline: none;
+}
+
+.layer-btn.active {
+  background: var(--gold);
+  color: var(--charcoal);
+  border-color: var(--gold);
+  font-weight: bold;
+}
+
+/* --- Viewer Wrap ---------------------------------------------------------- */
+#viewer-wrap {
+  grid-area: viewer;
+  position: relative;
+  overflow: hidden;
+  background: var(--charcoal);
+  /* account for fixed titlebar */
+  margin-top: var(--titlebar-area-height);
+}
+
+#osd-viewer {
+  width: 100%;
+  height: 100%;
+  background: var(--charcoal);
+}
+
+/* Layer CSS filters applied to the OSD canvas element */
+#osd-viewer.layer-visible  canvas { filter: none; }
+#osd-viewer.layer-negative canvas { filter: invert(1) sepia(0.2) hue-rotate(180deg); }
+#osd-viewer.layer-forensic canvas { filter: contrast(220%) brightness(0.75) sepia(0.4) hue-rotate(200deg); }
+
+/* --- SVG Hotspot Overlay -------------------------------------------------- */
+#hotspot-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;     /* pass clicks to OSD by default */
+  overflow: visible;
+}
+
+.hotspot-group {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.hotspot-ring {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 0.005;
+  animation: hotspot-breathe 3s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hotspot-dot {
+  fill: var(--gold);
+}
+
+.hotspot-label {
+  font-size: 0.025px;
+  fill: var(--text-primary);
+  text-anchor: middle;
+  dominant-baseline: hanging;
+  pointer-events: none;
+  font-family: inherit;
+  paint-order: stroke;
+  stroke: var(--charcoal);
+  stroke-width: 0.004px;
+}
+
+@keyframes hotspot-breathe {
+  0%, 100% { opacity: 0.9; transform: scale(1);    }
+  50%       { opacity: 0.4; transform: scale(1.25); }
+}
+
+.hotspot-group:hover .hotspot-ring,
+.hotspot-group:focus  .hotspot-ring {
+  stroke: #fff;
+  animation: none;
+  opacity: 1;
+}
+
+.hotspot-group:hover .hotspot-dot,
+.hotspot-group:focus  .hotspot-dot {
+  fill: #fff;
+}
+
+/* --- Annotation Panel ----------------------------------------------------- */
+#annotation-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem max(var(--safe-right), 1.5rem) max(calc(var(--safe-bottom) + 1.5rem), 1.5rem) max(var(--safe-left), 1.5rem);
+  background: var(--overlay-bg);
+  backdrop-filter: var(--blur-heavy);
+  -webkit-backdrop-filter: var(--blur-heavy);
+  border-top: 1px solid var(--gold-dim);
+  z-index: 200;
+  max-height: 50vh;
+  overflow-y: auto;
+  transform: translateY(0);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#annotation-panel[hidden] {
+  display: none;
+}
+
+#annotation-close {
+  position: absolute;
+  top: 1rem;
+  right: max(var(--safe-right), 1rem);
+  background: transparent;
+  border: 1px solid var(--gold-dim);
+  color: var(--gold);
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+#annotation-close:hover { background: var(--gold-glow); }
+
+#annotation-title {
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+#annotation-verse {
+  border-left: 3px solid var(--gold);
+  padding-left: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+#annotation-forensic {
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* --- Mobile Layer Bar ----------------------------------------------------- */
+#mobile-layer-bar {
+  grid-area: mobile-bar;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem max(var(--safe-right), 0.5rem) max(var(--safe-bottom), 0.6rem) max(var(--safe-left), 0.5rem);
+  background: var(--overlay-bg);
+  backdrop-filter: var(--blur-light);
+  -webkit-backdrop-filter: var(--blur-light);
+  border-top: 1px solid var(--charcoal-soft);
+}
+
+/* --- OSD UI Overrides ----------------------------------------------------- */
+.openseadragon-container { background: var(--charcoal) !important; }
+
+.openseadragon-canvas canvas {
+  transition: filter 0.4s ease;
+}
+
+/* Hide default OSD navigator border */
+.navigator { border: 1px solid var(--gold-dim) !important; }
+
+/* --- Scrollbar (Webkit) --------------------------------------------------- */
+::-webkit-scrollbar            { width: 4px; }
+::-webkit-scrollbar-track      { background: var(--charcoal-mid); }
+::-webkit-scrollbar-thumb      { background: var(--gold-dim); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* --- Focus Styles --------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
