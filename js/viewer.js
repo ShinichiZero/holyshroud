@@ -14,6 +14,7 @@
   var sourceConfigs = buildSourceConfigs();
   var activeSourceIndex = -1;
   var activeLoadNonce = 0;
+  var lastFailureReason = '';
   var viewer = null;
 
   if (typeof OpenSeadragon === 'undefined') {
@@ -65,7 +66,10 @@
     configs.push(
       {
         id: 'archdiocese-jubilee-scan',
-        tileSource: 'https://www.sindone.org/telo/sindone.jpg',
+        tileSource: {
+          type: 'image',
+          url: 'https://www.sindone.org/telo/sindone.jpg'
+        },
         sourceLabel: {
           it: 'Fonte: Arcidiocesi di Torino, lettura ufficiale del Telo',
           en: 'Source: Archdiocese of Turin, official cloth reader',
@@ -79,7 +83,10 @@
       },
       {
         id: 'miller-negative-public-mirror',
-        tileSource: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Full_length_negatives_of_the_shroud_of_Turin.jpg',
+        tileSource: {
+          type: 'image',
+          url: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Full_length_negatives_of_the_shroud_of_Turin.jpg'
+        },
         sourceLabel: {
           it: 'Fonte: Wikimedia Commons (dominio pubblico), negativo ad alto contrasto',
           en: 'Source: Wikimedia Commons (public domain), high-contrast negative',
@@ -93,7 +100,10 @@
       },
       {
         id: 'local-preview',
-        tileSource: './assets/images/shroud-preview.jpg',
+        tileSource: {
+          type: 'image',
+          url: './assets/images/shroud-preview.jpg'
+        },
         sourceLabel: {
           it: 'Fonte: Anteprima locale del progetto',
           en: 'Source: Local project preview',
@@ -255,6 +265,7 @@
       return;
     }
 
+    lastFailureReason = reason || '';
     console.warn('[Viewer] Source failed:', reason);
     destroyViewer();
 
@@ -286,9 +297,20 @@
       la: 'Praevisio statica Sindonis Taurinensis'
     });
 
+    var reasonLabel = localizedText({
+      it: 'Dettaglio tecnico:',
+      en: 'Technical detail:',
+      la: 'Detalis technicus:'
+    });
+
+    var reasonLine = lastFailureReason
+      ? '<p style="margin-top:0.75rem; color:#b8a99a; font-size:0.8rem; opacity:0.9;">' + escapeHtml(reasonLabel + ' ' + lastFailureReason) + '</p>'
+      : '';
+
     var fallbackHTML = '<div class="viewer-error">' +
       '<h2>' + escapeHtml(title) + '</h2>' +
       '<p>' + escapeHtml(body) + '</p>' +
+      reasonLine +
       '<img src="./assets/images/shroud-preview.jpg" alt="' + escapeHtml(imgAlt) + '" style="max-width:min(96vw,980px); width:100%; border:1px solid #1e1a17; border-radius:8px; margin-top:1.25rem;" />' +
       '<a href="./index.html" class="btn" style="margin-top:2rem;" data-i18n="viewer.backHome">Torna alla Home</a>' +
       '</div>';
